@@ -1,0 +1,11 @@
+<resources>
+    
+    <string name="app_name">Portail Mines Paris</string>
+    <string name="menu_settings">Settings</string>
+    <string name="titre_activite_messages">Messages</string>
+    <string name="titre_activite_trombi">Trombi</string>
+    <string name="titre_activite_petits_cours">Petits Cours</string>
+    <string name="title_activity_login">Authentification</string>
+    <string name="mapKey">0m7w4XMXMb3I3CbSjebJNGNpjLa57QDAv7ZzJrg</string>
+
+</resources>

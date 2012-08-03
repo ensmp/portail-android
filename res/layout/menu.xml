@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+<item android:id="@+id/menu_messages" 
+      android:title="Messages"
+      android:icon="@drawable/menu_messages"/>
+
+<item android:id="@+id/menu_trombi" 
+      android:title="Trombi"
+      android:icon="@drawable/menu_trombi"/>
+
+<item android:id="@+id/menu_petits_cours" 
+      android:title="Petits Cours"
+      android:icon="@drawable/menu_petits_cours"/>
+<!-- 
+<item android:id="@+id/menu_services" 
+      android:title="Services"
+      android:icon="@drawable/menu_services">
+ 
+     <menu android:id="@+id/sous_menu_services">
+	 <item android:id="@+id/menu_trombi"
+	       android:title="Trombi"   />	
+ 
+	 <item android:id="@+id/menu_petits_cours"
+	       android:title="Petits Cours"  />
+     </menu>
+</item> -->
+ 
+<item android:id="@+id/menu_calendrier" 
+     android:title="Calendrier"
+     android:icon="@drawable/menu_calendrier" />
+</menu>
