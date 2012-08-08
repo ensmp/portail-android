@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/calendrier_fleche_gauche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="&lt;" />
+
+            <TextView
+                android:id="@+id/calendrier_mois"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center_horizontal"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/calendrier_fleche_droite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=">" />
+
+        </TableRow>
+    </TableLayout>
+
+    <GridView
+        android:id="@+id/calendrier_jours"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:drawSelectorOnTop="true"        
+        android:numColumns="7" >
+
+    </GridView>
+
+</LinearLayout>

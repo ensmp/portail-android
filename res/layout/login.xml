@@ -16,10 +16,14 @@
   				android:paddingTop="5dip"
   				android:paddingBottom="5dip">
   				<!-- Logo Start-->
-  				<ImageView android:src="@drawable/logo"
-  							android:layout_width="wrap_content"
-  							android:layout_height="wrap_content"
-  							android:layout_marginLeft="10dip"/>
+
+  				<ImageView
+  				    android:layout_width="130dp"
+  				    android:layout_height="fill_parent"
+  				    android:layout_gravity="center_vertical|left"
+  				    android:layout_marginLeft="10dip"
+  				    android:src="@drawable/logo" />
+
   				<!-- Logo Ends -->
   		</LinearLayout>
   		<!--  Header Ends -->  
@@ -73,11 +77,13 @@
             		android:padding="10dip"
             		android:textStyle="bold"/>
 		  <!-- Login button -->	
-		  <Button android:id="@+id/btnLogin" 
-		  		android:layout_width="fill_parent"
-		  		android:layout_height="wrap_content"
-		  		android:layout_marginTop="10dip"
-		  		android:text="Login"/>		  
+
+		  <Button
+		      android:id="@+id/btnLogin"
+		      android:layout_width="fill_parent"
+		      android:layout_height="wrap_content"
+		      android:layout_marginTop="10dip"
+		      android:text="Se connecter" />
 		    
 		</LinearLayout>
   		<!-- Login Form Ends --> 		

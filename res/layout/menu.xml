@@ -29,4 +29,11 @@
 <item android:id="@+id/menu_calendrier" 
      android:title="Calendrier"
      android:icon="@drawable/menu_calendrier" />
+
+<item android:id="@+id/menu_logout" 
+     android:title="Se déconnecter"
+     android:icon="@drawable/menu_logout" />
+
 </menu>
+
+

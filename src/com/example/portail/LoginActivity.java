@@ -1,12 +1,14 @@
 package com.example.portail;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.CookieStore;
 
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -24,9 +26,12 @@ public class LoginActivity extends Activity {
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        super.onCreate(savedInstanceState);                
         
+        chargerPreferences();
+        
+        setContentView(R.layout.login);
+                        
         inputUsername = (EditText) findViewById(R.id.loginUsername);
 		inputPassword = (EditText) findViewById(R.id.loginPassword);
 		btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -37,14 +42,43 @@ public class LoginActivity extends Activity {
 			public void onClick(View view) {
 				String username = inputUsername.getText().toString();
 				String password = inputPassword.getText().toString();
-				Log.d("Button", "Login");
 				LoginTask identificationHttp =new LoginTask();
 				identificationHttp.execute();
 			}
 		});
     }
 	
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+		super.onWindowFocusChanged(hasFocus);		
+		if (hasFocus) {
+			chargerPreferences();
+		}
+	}
+	
+	public void chargerPreferences() {
+		SharedPreferences settings = getSharedPreferences("Authentification", 0);
+	    String csrftoken = settings.getString("csrftoken", "");
+	    String sessionid = settings.getString("sessionid", ""); 	    
+	    
+	    if (!csrftoken.equals("") && !sessionid.equals("")) {
+	    	ChargementDonnees.changerCookies(csrftoken, sessionid, settings.getString("domain", ""));
+	    	Intent intentMessages = new Intent(this, MessagesActivity.class);
+			startActivity(intentMessages);
+	    }
+	}
+	
+	public void enregistrerPreferences() {
+		SharedPreferences settings = getSharedPreferences("Authentification", 0);
+		SharedPreferences.Editor editor = settings.edit();
+	    editor.putString("csrftoken", ChargementDonnees.getToken());
+	    editor.putString("sessionid", ChargementDonnees.getSessionId());
+	    editor.putString("domain", ChargementDonnees.getDomain());
+	    editor.commit();		
+	}
+	
 	public void succesAuthentification() {
+		enregistrerPreferences();
 		loginErrorMsg.setText("Authentification réussie");
 		Intent intentMessages = new Intent(this, MessagesActivity.class);
 		startActivity(intentMessages);

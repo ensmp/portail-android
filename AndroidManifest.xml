@@ -23,6 +23,14 @@
         <activity
             android:name=".TrombiListeActivity"
             android:label="@string/titre_activite_trombi" >
+        </activity>        
+        <activity
+            android:name=".TrombiDetailActivity"
+            android:label="@string/titre_activite_trombi_detail" >
+        </activity>
+        <activity
+            android:name=".CalendrierActivity"
+            android:label="@string/titre_activite_calendrier" >
         </activity>
         <activity
             android:name=".PetitsCoursActivity"

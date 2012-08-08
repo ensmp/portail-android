@@ -6,7 +6,6 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -21,17 +20,14 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class ChargementDonnees
 {
@@ -59,6 +55,31 @@ public class ChargementDonnees
 		
 		HttpResponse response = postData("http://10.0.2.2:8000/accounts/login/", nameValuePairs);
 		return response;
+	}
+	
+	public static void changerCookies(String csrftoken, String sessionid, String domain) {
+		if (cookieStore == null) {
+			cookieStore = new BasicCookieStore();
+	    	localContext = new BasicHttpContext();
+	    	localContext.setAttribute(ClientContext.COOKIE_STORE, cookieStore);
+		}
+		cookieStore.clear();
+		BasicClientCookie cookie = new BasicClientCookie("csrftoken", csrftoken);
+		cookie.setDomain(domain);
+		cookieStore.addCookie(cookie);
+		cookie = new BasicClientCookie("sessionid", sessionid);
+		cookie.setDomain(domain);
+		cookieStore.addCookie(cookie);
+	}
+	
+	public static void supprimerCookies() {
+		cookieStore.clear();
+	}
+	
+	public static void afficherCookies() {
+		for (int i=0; i<cookieStore.getCookies().size();i++) {
+        	Log.d("Cookie", cookieStore.getCookies().get(i).getName() + " : " + cookieStore.getCookies().get(i).getValue() + " " + cookieStore.getCookies().get(i).getDomain());        	
+        }
 	}
 	
 	public static String getData(String url) {
@@ -119,5 +140,21 @@ public class ChargementDonnees
         	}
         }
 		return "Pas de CSRF Token dans les cookies ...";
+	}
+	
+	public static String getSessionId() {
+		for (int i=0; i<cookieStore.getCookies().size();i++) {
+        	if (cookieStore.getCookies().get(i).getName().equals("sessionid")) {
+        		return cookieStore.getCookies().get(i).getValue();
+        	}
+        }
+		return "Pas de Session id dans les cookies ...";
+	}
+	
+	public static String getDomain() {
+		if (cookieStore.getCookies().size() > 0) {
+			return cookieStore.getCookies().get(0).getDomain();
+		}
+		return "";
 	}
 }

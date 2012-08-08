@@ -1,28 +1,10 @@
 package com.example.portail;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import org.apache.http.Header;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.CookieStore;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.protocol.ClientContext;
-import org.apache.http.impl.client.BasicCookieStore;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.util.EntityUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,25 +15,19 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
-public class MessagesActivity extends Activity {
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+public class MessagesActivity extends MenuActivity {
 
 	public static ListView vueListe;
 	public ArrayList<HashMap<String, String>> listItem = new ArrayList<HashMap<String, String>>();
@@ -64,7 +40,6 @@ public class MessagesActivity extends Activity {
         
         vueListe = (ListView) getLayoutInflater().inflate(R.layout.message_liste, null);
         
-
         ChargementMessagesTask chargementMessages = new ChargementMessagesTask();
         chargementMessages.execute();
 
@@ -84,37 +59,11 @@ public class MessagesActivity extends Activity {
         	}
          });
         
+        
+        
         setContentView(vueListe);
         
         
-    }
-    
-    public boolean onCreateOptionsMenu(Menu menu) {
-    	 
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.layout.menu, menu);
- 
-        //Il n'est pas possible de modifier l'icône d'entête du sous-menu via le fichier XML on le fait donc en JAVA
-    	//menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.option_white);
- 
-        return true;
-     }
-    
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-           case R.id.menu_messages:
-   			   startActivity(new Intent(this, MessagesActivity.class));
-               return true;
-           case R.id.menu_trombi:
-   			   startActivity(new Intent(this, TrombiListeActivity.class));
-               return true;
-           case R.id.menu_petits_cours:
-   			   startActivity(new Intent(this, PetitsCoursActivity.class));
-               return true;
-          case R.id.menu_calendrier:
-              return true;
-        }
-        return false;
     }
     
     private class ChargementMessagesTask extends AsyncTask {

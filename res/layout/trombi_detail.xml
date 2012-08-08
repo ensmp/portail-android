@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/trombiPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/menu_trombi" />
+
+    <TableLayout
+        android:id="@+id/trombiTableau"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/trombiPhoto"
+        android:layout_centerHorizontal="true" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Promo" />
+
+            <TextView
+                android:id="@+id/trombiTextePromo"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Date de naissance" />
+
+            <TextView
+                android:id="@+id/trombiTexteDate"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Téléphone" />
+
+            <TextView
+                android:id="@+id/trombiTexteTel"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Chambre" />
+
+            <TextView
+                android:id="@+id/trombiTexteChambre"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Co" />
+
+            <TextView
+                android:id="@+id/trombiTexteCo"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="#0000FF"
+                android:typeface="normal" />
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Parrain" />
+
+            <TextView
+                android:id="@+id/trombiTexteParrain"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="#0000FF"
+                android:typeface="normal" />
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Fillot" />
+
+            <TextView
+                android:id="@+id/trombiTexteFillot"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="#0000FF"
+                android:typeface="normal" />
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/trombiLigneAssoce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/TexteTrombiLegende"
+                android:layout_weight="1"
+                android:text="Associations" />
+
+            <TextView
+                android:id="@+id/trombiTexteAssoce"
+                style="@style/TexteTrombiContenu"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="#0000FF"
+                android:typeface="normal" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/trombiTexteNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tableLayout1"
+        android:layout_centerHorizontal="true"
+        android:text="Élève"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
