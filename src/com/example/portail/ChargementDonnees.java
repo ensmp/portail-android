@@ -45,15 +45,15 @@ public class ChargementDonnees
 	}
 	
 
-	public static HttpResponse authentifier(String username, String password) {
-		getData("http://10.0.2.2:8000/accounts/login/");
+	public static HttpResponse authentifier(String domain, String username, String password) {
+		getData(domain+"/accounts/login/");
 		
 		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 		nameValuePairs.add(new BasicNameValuePair("csrfmiddlewaretoken",getToken()));
 		nameValuePairs.add(new BasicNameValuePair("username", username));
 		nameValuePairs.add(new BasicNameValuePair("password", password));
 		
-		HttpResponse response = postData("http://10.0.2.2:8000/accounts/login/", nameValuePairs);
+		HttpResponse response = postData(domain+"/accounts/login/", nameValuePairs);
 		return response;
 	}
 	

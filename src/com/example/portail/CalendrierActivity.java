@@ -42,8 +42,8 @@ public class CalendrierActivity extends MenuActivity implements OnDispatchDateSe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);       
         
-        ChargementMessagesTask chargementMessages = new ChargementMessagesTask();
-        chargementMessages.execute();
+        ChargementCalendrierTask chargementCalendrier = new ChargementCalendrierTask();
+        chargementCalendrier.execute();
         
         LinearLayout calendrierGlobal = (LinearLayout) getLayoutInflater().inflate(R.layout.calendrier_global, null);
         CalendrierVue vueCalendrier = (CalendrierVue) calendrierGlobal.findViewById(R.id.calendrier);
@@ -53,7 +53,7 @@ public class CalendrierActivity extends MenuActivity implements OnDispatchDateSe
                 
     }
     
-    private class ChargementMessagesTask extends AsyncTask {
+    private class ChargementCalendrierTask extends AsyncTask {
 
 	     protected void onPostExecute(Object result) {
 	    	 String messagesJson = (String)result;
@@ -69,8 +69,8 @@ public class CalendrierActivity extends MenuActivity implements OnDispatchDateSe
 		@Override
 		protected Object doInBackground(Object... arg0) {
 			ChargementDonnees chargement = new ChargementDonnees();
-			String messagesJson = chargement.getData("http://10.0.2.2:8000/calendrier/json/");
-	    	return messagesJson;
+			String calendrierJson = chargement.getData(getString(R.string.domain)+"/calendrier/json/");
+	    	return calendrierJson;
 		}
 	 }
 

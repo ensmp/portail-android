@@ -87,7 +87,7 @@ public class TrombiListeActivity extends MenuActivity {
 		@Override
 		protected Object doInBackground(Object... arg0) {
 			ChargementDonnees chargement = new ChargementDonnees();
-			String trombiJson = chargement.getData("http://10.0.2.2:8000/people/json/");
+			String trombiJson = chargement.getData(getString(R.string.domain)+"/people/json/");
 	    	return trombiJson;
 		}
 	 }

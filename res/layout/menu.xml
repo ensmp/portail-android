@@ -9,6 +9,10 @@
       android:title="Trombi"
       android:icon="@drawable/menu_trombi"/>
 
+<item android:id="@+id/menu_vendome" 
+      android:title="Vendôme"
+      android:icon="@drawable/menu_vendome"/>
+
 <item android:id="@+id/menu_petits_cours" 
       android:title="Petits Cours"
       android:icon="@drawable/menu_petits_cours"/>

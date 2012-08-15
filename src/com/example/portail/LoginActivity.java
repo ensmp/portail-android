@@ -107,7 +107,7 @@ public class LoginActivity extends Activity {
 		@Override
 		protected Object doInBackground(Object... arg0) {
 			ChargementDonnees chargement = new ChargementDonnees();
-			HttpResponse response = chargement.authentifier(inputUsername.getText().toString(), inputPassword.getText().toString());
+			HttpResponse response = chargement.authentifier(getString(R.string.domain),inputUsername.getText().toString(), inputPassword.getText().toString());
 	    	 return response;
 		}
 	 }

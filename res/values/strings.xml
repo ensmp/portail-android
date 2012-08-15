@@ -1,13 +1,16 @@
 <resources>
     
     <string name="app_name">Portail Mines Paris</string>
+    <!--<string name="domain">http://10.0.2.2:8000</string>-->
+    <string name="domain">http://eleves.mines.alwaysdata.net</string>
     <string name="menu_settings">Settings</string>
     <string name="titre_activite_messages">Messages</string>
     <string name="titre_activite_trombi">Trombi</string>
     <string name="titre_activite_trombi_detail">Profil</string>
     <string name="titre_activite_calendrier">Calendrier</string>
     <string name="titre_activite_petits_cours">Petits Cours</string>
-    <string name="title_activity_login">Authentification</string>
+    <string name="titre_activite_login">Authentification</string>
+    <string name="titre_activite_vendome">Vendôme</string>
     <string name="mapKey">0m7w4XMXMb3I3CbSjebJNGNpjLa57QDAv7ZzJrg</string>
 
 </resources>

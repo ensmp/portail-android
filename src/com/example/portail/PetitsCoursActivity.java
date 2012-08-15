@@ -174,7 +174,7 @@ public class PetitsCoursActivity extends MapActivity implements OnGestureListene
 		@Override
 		protected Object doInBackground(Object... arg0) {
 			ChargementDonnees chargement = new ChargementDonnees();
-			String petitsCoursJson = chargement.getData("http://10.0.2.2:8000/petitscours/json/");
+			String petitsCoursJson = chargement.getData(getString(R.string.domain)+"/petitscours/json/");
 	    	return petitsCoursJson;
 		}
 	 }

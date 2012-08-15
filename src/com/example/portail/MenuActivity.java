@@ -31,6 +31,9 @@ public class MenuActivity extends Activity {
            case R.id.menu_petits_cours:
    			   startActivity(new Intent(this, PetitsCoursActivity.class));
                return true;
+           case R.id.menu_vendome:
+   			   startActivity(new Intent(this, VendomeListeActivity.class));
+               return true;
           case R.id.menu_calendrier:
         	  startActivity(new Intent(this, CalendrierActivity.class));
               return true;

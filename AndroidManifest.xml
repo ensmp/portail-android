@@ -37,8 +37,16 @@
             android:label="@string/titre_activite_petits_cours" >
         </activity>
         <activity
+            android:name=".VendomeListeActivity"
+            android:label="@string/titre_activite_vendome" >
+        </activity>
+        <activity
+            android:name=".VendomeDetailActivity"
+            android:label="@string/titre_activite_vendome" >
+        </activity>
+        <activity
             android:name="com.example.portail.LoginActivity"
-            android:label="@string/title_activity_login"
+            android:label="@string/titre_activite_login"
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

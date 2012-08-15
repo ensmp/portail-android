@@ -29,9 +29,10 @@ public final class R {
         public static final int menu_messages=0x7f02000f;
         public static final int menu_petits_cours=0x7f020010;
         public static final int menu_trombi=0x7f020011;
-        public static final int trombi_11leuren=0x7f020012;
-        public static final int trombi_11milber=0x7f020013;
-        public static final int trombi_11millot=0x7f020014;
+        public static final int menu_vendome=0x7f020012;
+        public static final int trombi_11leuren=0x7f020013;
+        public static final int trombi_11milber=0x7f020014;
+        public static final int trombi_11millot=0x7f020015;
     }
     public static final class id {
         public static final int afficher_date=0x7f060006;
@@ -43,35 +44,36 @@ public final class R {
         public static final int calendrier_mois=0x7f060002;
         public static final int calendrier_tv_jour=0x7f060007;
         public static final int calendrier_tv_nombre=0x7f060008;
-        public static final int description=0x7f060016;
+        public static final int description=0x7f060017;
         public static final int footer=0x7f06000a;
         public static final int header=0x7f060009;
-        public static final int img=0x7f060014;
-        public static final int list_view=0x7f060018;
+        public static final int img=0x7f060015;
+        public static final int list_view=0x7f060019;
         public static final int loginPassword=0x7f06000c;
         public static final int loginUsername=0x7f06000b;
         public static final int login_error=0x7f06000d;
-        public static final int mapView=0x7f060017;
-        public static final int menu_calendrier=0x7f060012;
-        public static final int menu_logout=0x7f060013;
+        public static final int mapView=0x7f060018;
+        public static final int menu_calendrier=0x7f060013;
+        public static final int menu_logout=0x7f060014;
         public static final int menu_messages=0x7f06000f;
-        public static final int menu_petits_cours=0x7f060011;
+        public static final int menu_petits_cours=0x7f060012;
         public static final int menu_trombi=0x7f060010;
-        public static final int tableLayout1=0x7f060025;
+        public static final int menu_vendome=0x7f060011;
+        public static final int tableLayout1=0x7f060026;
         public static final int tableRow1=0x7f060000;
-        public static final int titre=0x7f060015;
-        public static final int trombiLigneAssoce=0x7f060022;
-        public static final int trombiPhoto=0x7f060019;
-        public static final int trombiTableau=0x7f06001a;
-        public static final int trombiTexteAssoce=0x7f060023;
-        public static final int trombiTexteChambre=0x7f06001e;
-        public static final int trombiTexteCo=0x7f06001f;
-        public static final int trombiTexteDate=0x7f06001c;
-        public static final int trombiTexteFillot=0x7f060021;
-        public static final int trombiTexteNom=0x7f060024;
-        public static final int trombiTexteParrain=0x7f060020;
-        public static final int trombiTextePromo=0x7f06001b;
-        public static final int trombiTexteTel=0x7f06001d;
+        public static final int titre=0x7f060016;
+        public static final int trombiLigneAssoce=0x7f060023;
+        public static final int trombiPhoto=0x7f06001a;
+        public static final int trombiTableau=0x7f06001b;
+        public static final int trombiTexteAssoce=0x7f060024;
+        public static final int trombiTexteChambre=0x7f06001f;
+        public static final int trombiTexteCo=0x7f060020;
+        public static final int trombiTexteDate=0x7f06001d;
+        public static final int trombiTexteFillot=0x7f060022;
+        public static final int trombiTexteNom=0x7f060025;
+        public static final int trombiTexteParrain=0x7f060021;
+        public static final int trombiTextePromo=0x7f06001c;
+        public static final int trombiTexteTel=0x7f06001e;
     }
     public static final class layout {
         public static final int calendrier=0x7f030000;
@@ -88,14 +90,16 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f040000;
-        public static final int mapKey=0x7f040008;
-        public static final int menu_settings=0x7f040001;
-        public static final int title_activity_login=0x7f040007;
-        public static final int titre_activite_calendrier=0x7f040005;
-        public static final int titre_activite_messages=0x7f040002;
-        public static final int titre_activite_petits_cours=0x7f040006;
-        public static final int titre_activite_trombi=0x7f040003;
-        public static final int titre_activite_trombi_detail=0x7f040004;
+        public static final int domain=0x7f040001;
+        public static final int mapKey=0x7f04000a;
+        public static final int menu_settings=0x7f040002;
+        public static final int titre_activite_calendrier=0x7f040006;
+        public static final int titre_activite_login=0x7f040008;
+        public static final int titre_activite_messages=0x7f040003;
+        public static final int titre_activite_petits_cours=0x7f040007;
+        public static final int titre_activite_trombi=0x7f040004;
+        public static final int titre_activite_trombi_detail=0x7f040005;
+        public static final int titre_activite_vendome=0x7f040009;
     }
     public static final class style {
         public static final int AppTheme=0x7f050000;
