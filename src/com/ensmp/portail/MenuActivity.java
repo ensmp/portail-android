@@ -50,7 +50,7 @@ public class MenuActivity extends Activity {
         	  return true;
           case R.id.menu_logout:
         	  //On supprime les préférences
-              SharedPreferences settings = getSharedPreferences("Authentification", 0);
+              SharedPreferences settings = getSharedPreferences(ChargementDonnees.PREFERENCES, 0);
       		  SharedPreferences.Editor editor = settings.edit();
       	      editor.clear();
       	      editor.commit();
