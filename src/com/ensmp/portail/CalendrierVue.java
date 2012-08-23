@@ -1,9 +1,11 @@
-package com.example.portail;
+package com.ensmp.portail;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import com.ensmp.portail.R;
 
 import android.content.Context;
 import android.graphics.Color;

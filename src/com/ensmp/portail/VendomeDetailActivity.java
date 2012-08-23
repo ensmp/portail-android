@@ -1,4 +1,6 @@
-package com.example.portail;
+package com.ensmp.portail;
+
+import com.ensmp.portail.R;
 
 import android.os.Bundle;
 import android.util.Log;

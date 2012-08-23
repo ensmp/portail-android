@@ -11,6 +11,15 @@
     <string name="titre_activite_petits_cours">Petits Cours</string>
     <string name="titre_activite_login">Authentification</string>
     <string name="titre_activite_vendome">Vendôme</string>
+    <string name="ac_name_image_list">MediaMines</string>
+    <string name="ac_name_image_grid">MediaMines</string>
+    <string name="ac_name_image_pager">MediaMines</string>
+    <string name="ac_name_image_gallery">MediaMines</string>
     <string name="mapKey">0m7w4XMXMb3I3CbSjebJNGNpjLa57QDAv7ZzJrg</string>
 
+    <string name="descr_image">Image</string>
+    
+    <string name="local_service_started">MediaMines Fetcher Running</string>
+    <string name="local_service_label">label me whatever you will</string>
+    
 </resources>

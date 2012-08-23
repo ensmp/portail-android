@@ -1,4 +1,4 @@
-package com.example.portail;
+package com.ensmp.portail;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -34,6 +34,7 @@ public class ChargementDonnees
 	
 	private static CookieStore cookieStore;
 	private static HttpContext localContext;
+	public final static String PREFERENCES = "PREFS_PORTAIL_ENSMP";
 
 	public ChargementDonnees() {
 		super();

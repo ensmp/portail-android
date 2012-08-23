@@ -1,4 +1,4 @@
-package com.example.portail;
+package com.ensmp.portail;
 
 
 
@@ -7,6 +7,8 @@ import java.util.HashMap;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.ensmp.portail.R;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

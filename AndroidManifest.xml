@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.portail"
+    package="com.ensmp.portail"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".PortailApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -45,7 +46,16 @@
             android:label="@string/titre_activite_vendome" >
         </activity>
         <activity
-            android:name="com.example.portail.LoginActivity"
+            android:name=".ImagePagerActivity"
+            android:label="@string/ac_name_image_pager" />
+        <activity
+            android:name="ImageGridActivity"
+            android:label="@string/ac_name_image_grid" />
+        <activity
+            android:name="ImageListActivity"
+            android:label="@string/ac_name_image_list" />
+        <activity
+            android:name="com.ensmp.portail.LoginActivity"
             android:label="@string/titre_activite_login"
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
@@ -54,6 +64,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- Widget -->
+        <receiver android:name=".widget.UILWidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_provider" />
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+        
+        <service android:name=".widget.MediaMinesFetcherService"/>
+        
     </application>
 
 </manifest>

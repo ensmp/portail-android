@@ -1,4 +1,4 @@
-package com.example.portail;
+package com.ensmp.portail;
 
 
 import java.text.ParseException;
@@ -12,7 +12,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.portail.CalendrierVue.OnDispatchDateSelectListener;
+import com.ensmp.portail.CalendrierVue.OnDispatchDateSelectListener;
+import com.ensmp.portail.R;
 
 
 import android.os.AsyncTask;

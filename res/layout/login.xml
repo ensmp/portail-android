@@ -23,6 +23,8 @@
   				    android:layout_gravity="center_vertical|left"
   				    android:layout_marginLeft="10dip"
   				    android:src="@drawable/logo" />
+  				
+  				
 
   				<!-- Logo Ends -->
   		</LinearLayout>
@@ -84,6 +86,13 @@
 		      android:layout_height="wrap_content"
 		      android:layout_marginTop="10dip"
 		      android:text="Se connecter" />
+		  
+		  <ProgressBar
+			        android:id="@+id/loginloading"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:visibility="gone" />
 		    
 		</LinearLayout>
   		<!-- Login Form Ends --> 		

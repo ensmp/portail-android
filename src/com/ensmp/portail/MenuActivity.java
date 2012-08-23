@@ -1,4 +1,12 @@
-package com.example.portail;
+package com.ensmp.portail;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.ensmp.portail.R;
+import com.ensmp.portail.Extra;
+import com.ensmp.portail.ImageGridActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -37,6 +45,9 @@ public class MenuActivity extends Activity {
           case R.id.menu_calendrier:
         	  startActivity(new Intent(this, CalendrierActivity.class));
               return true;
+          case R.id.menu_mediamines:
+        	  startActivity(new Intent(this, ImageListActivity.class));
+        	  return true;
           case R.id.menu_logout:
         	  //On supprime les préférences
               SharedPreferences settings = getSharedPreferences("Authentification", 0);

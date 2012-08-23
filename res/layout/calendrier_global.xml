@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >    
 
-    <com.example.portail.CalendrierVue
+    <com.ensmp.portail.CalendrierVue
         android:id="@+id/calendrier"
         android:layout_width="fill_parent"
     	android:layout_height="wrap_content"

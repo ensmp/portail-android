@@ -1,7 +1,9 @@
-package com.example.portail;
+package com.ensmp.portail;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.CookieStore;
+
+import com.ensmp.portail.R;
 
 
 import android.os.AsyncTask;
@@ -14,6 +16,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class LoginActivity extends Activity {
@@ -23,6 +26,7 @@ public class LoginActivity extends Activity {
 	EditText inputUsername;
 	EditText inputPassword;
 	TextView loginErrorMsg;
+	ProgressBar spinner; 
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class LoginActivity extends Activity {
 		inputPassword = (EditText) findViewById(R.id.loginPassword);
 		btnLogin = (Button) findViewById(R.id.btnLogin);
 		loginErrorMsg = (TextView) findViewById(R.id.login_error);
+		spinner = (ProgressBar) findViewById(R.id.loginloading);
         
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
@@ -57,7 +62,7 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void chargerPreferences() {
-		SharedPreferences settings = getSharedPreferences("Authentification", 0);
+		SharedPreferences settings = getSharedPreferences(ChargementDonnees.PREFERENCES, 0);
 	    String csrftoken = settings.getString("csrftoken", "");
 	    String sessionid = settings.getString("sessionid", ""); 	    
 	    
@@ -69,7 +74,7 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void enregistrerPreferences() {
-		SharedPreferences settings = getSharedPreferences("Authentification", 0);
+		SharedPreferences settings = getSharedPreferences(ChargementDonnees.PREFERENCES, 0);
 		SharedPreferences.Editor editor = settings.edit();
 	    editor.putString("csrftoken", ChargementDonnees.getToken());
 	    editor.putString("sessionid", ChargementDonnees.getSessionId());
@@ -78,6 +83,7 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void succesAuthentification() {
+		spinner.setVisibility(View.GONE);
 		enregistrerPreferences();
 		loginErrorMsg.setText("Authentification réussie");
 		Intent intentMessages = new Intent(this, MessagesActivity.class);
@@ -86,12 +92,19 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void echecAuthentification() {
+		spinner.setVisibility(View.GONE);
 		loginErrorMsg.setText("Identifiant ou mot de passe incorrects");
 	}
 	
 	
 	private class LoginTask extends AsyncTask {
 
+		@Override
+		protected void onPreExecute() {			
+			super.onPreExecute();
+			spinner.setVisibility(View.VISIBLE);
+		}
+		
 	     protected void onPostExecute(Object result) {
 	    	 HttpResponse response = (HttpResponse)result;
 	    	 if (response.getStatusLine().getStatusCode() == 302) {
